@@ -47,20 +47,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*private void checkPermissions(){
+    private void checkPermissions(){
        int resultCall = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+       int resultSms = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
 
-       if(resultCall == PackageManager.PERMISSION_DENIED){
-           ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 1001);
+       if(resultCall == PackageManager.PERMISSION_DENIED || resultSms == PackageManager.PERMISSION_DENIED){
+           ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE, Manifest.permission.SEND_SMS}, 1001);
        }
-    }*/
-
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if(requestCode == 1001){
-            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED){
                 Toast.makeText(this, "권한 허용 됨", Toast.LENGTH_SHORT).show();
             }
         }
@@ -106,7 +106,9 @@ public class MainActivity extends AppCompatActivity {
         message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 메시지
+                Intent messageIntent = new Intent(MainActivity.this, MessageActivity.class);
+                messageIntent.putExtra("phone_num", phoneNum.getText().toString());
+                startActivity(messageIntent);
             }
         });
 
