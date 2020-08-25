@@ -1,3 +1,7 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">ESC Basic App R</string>
+=======
+    <string name="app_name">ESC Basic App</string>
+>>>>>>> e53d8a3037368862d0fad0e30485a600d2116dce
 </resources>

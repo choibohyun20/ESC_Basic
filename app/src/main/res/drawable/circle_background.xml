@@ -2,6 +2,10 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
 
+<<<<<<< HEAD
     <solid android:color="#00F676"/>
+=======
+    <solid android:color="#00E676"/>
+>>>>>>> e53d8a3037368862d0fad0e30485a600d2116dce
 
 </shape>

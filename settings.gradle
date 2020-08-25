@@ -1,2 +1,6 @@
 include ':app'
+<<<<<<< HEAD
 rootProject.name = "ESC Basic App R"
+=======
+rootProject.name = "ESC Basic App"
+>>>>>>> e53d8a3037368862d0fad0e30485a600d2116dce
